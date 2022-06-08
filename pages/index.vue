@@ -1,5 +1,7 @@
 <template>
-  <Tutorial />
+  <div>
+    <i class="fas fa-adjust"></i>
+  </div>
 </template>
 
 <script>
