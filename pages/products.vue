@@ -27,7 +27,12 @@
         </tr>
       </thead>
 
-      <b-button style="background-color: #3252df !important; color: white; margin-top: 30px;"
+      <b-button
+        style="
+          background-color: #3252df !important;
+          color: white;
+          margin-top: 30px;
+        "
         >Tambah Produk</b-button
       >
       <table class="table table-bordered mt-5">
@@ -44,7 +49,12 @@
         </thead>
         <tbody>
           <tr>
-            <td class="text-center">1</td>
+            <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
             <td class="text-center">Telkomsel Pulsa 5000</td>
             <td class="text-center">100</td>
             <td class="text-center">20.000</td>
@@ -57,7 +67,12 @@
             </td>
           </tr>
           <tr style="background-color: #f2f2f2 !important">
-            <td class="text-center">2</td>
+            <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
             <td class="text-center">Telkomsel Pulsa 5000</td>
             <td class="text-center">100</td>
             <td class="text-center">20.000</td>
@@ -70,7 +85,12 @@
             </td>
           </tr>
           <tr>
-            <td class="text-center">3</td>
+            <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
             <td class="text-center">Telkomsel Pulsa 5000</td>
             <td class="text-center">100</td>
             <td class="text-center">20.000</td>
@@ -83,7 +103,12 @@
             </td>
           </tr>
           <tr style="background-color: #f2f2f2 !important">
-            <td class="text-center">4</td>
+            <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
             <td class="text-center">Telkomsel Pulsa 5000</td>
             <td class="text-center">100</td>
             <td class="text-center">20.000</td>
@@ -96,7 +121,12 @@
             </td>
           </tr>
           <tr>
-            <td class="text-center">5</td>
+            <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
             <td class="text-center">Telkomsel Pulsa 5000</td>
             <td class="text-center">100</td>
             <td class="text-center">20.000</td>
@@ -109,7 +139,12 @@
             </td>
           </tr>
           <tr style="background-color: #f2f2f2 !important">
-            <td class="text-center">6</td>
+            <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
             <td class="text-center">Telkomsel Pulsa 5000</td>
             <td class="text-center">100</td>
             <td class="text-center">20.000</td>

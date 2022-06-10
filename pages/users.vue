@@ -18,7 +18,12 @@
       </thead>
       <tbody>
         <tr>
-          <td class="text-center">1</td>
+          <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
           <td class="text-center">Andi</td>
           <td class="text-center">andi@gmail.com</td>
           <td class="text-center">081291273233</td>
@@ -29,7 +34,12 @@
           </td>
         </tr>
         <tr style="background-color: #f2f2f2 !important;">
-          <td class="text-center">2</td>
+          <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
           <td class="text-center">Ana</td>
           <td class="text-center">ana@gmail.com</td>
           <td class="text-center">081291273233</td>
@@ -40,7 +50,12 @@
           </td>
         </tr>
         <tr>
-          <td class="text-center">3</td>
+          <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
           <td class="text-center">Hairul</td>
           <td class="text-center">hairul@gmail.com</td>
           <td class="text-center">081291273233</td>
@@ -51,7 +66,12 @@
           </td>
         </tr>
         <tr style="background-color: #f2f2f2 !important;">
-          <td class="text-center">4</td>
+          <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
           <td class="text-center">james</td>
           <td class="text-center">james@gmail.com</td>
           <td class="text-center">081291273233</td>
@@ -62,7 +82,12 @@
           </td>
         </tr>
         <tr>
-          <td class="text-center">5</td>
+          <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
           <td class="text-center">Jono</td>
           <td class="text-center">jono@gmail.com</td>
           <td class="text-center">081291273233</td>
@@ -73,7 +98,12 @@
           </td>
         </tr>
         <tr style="background-color: #f2f2f2 !important;">
-          <td class="text-center">6</td>
+          <td class="text-center">
+              <label class="checkbox-wrap checkbox-primary">
+                <input type="checkbox" checked="" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
           <td class="text-center">Hendi</td>
           <td class="text-center">hendi@gmail.com</td>
           <td class="text-center">081291273233</td>
