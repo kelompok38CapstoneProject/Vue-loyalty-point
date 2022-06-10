@@ -5,7 +5,7 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card py-4 rounded-lg">
             <img
-              src="/assets/img/logo.png"
+              src="/assets/img/logoo.png"
               alt=""
               style="width: 35%; margin: 0 auto"
             />
