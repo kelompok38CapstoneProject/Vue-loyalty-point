@@ -4,6 +4,8 @@
 
     <section>
       <DashboardCard />
+
+      <DataTable />
     </section>
   </div>
 </template>
