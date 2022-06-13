@@ -104,10 +104,26 @@
               responsive
               striped
               hover
+              id="my-table"
+              :per-page="perPage"
+              :current-page="currentPage"
               :items="items"
               thead-class="primaryColor"
             ></b-table>
           </div>
+        </section>
+
+        <section class="d-flex justify-content-between align-items-center mt-5">
+          <div>
+            <h6>Page {{ currentPage }}</h6>
+          </div>
+
+          <b-pagination
+            v-model="currentPage"
+            :total-rows="rows"
+            :per-page="perPage"
+            aria-controls="my-table"
+          ></b-pagination>
         </section>
       </div>
     </div>
@@ -118,6 +134,8 @@
 export default {
   data() {
     return {
+      perPage: 5,
+      currentPage: 1,
       items: [
         {
           No: 1,
@@ -151,8 +169,61 @@ export default {
           TotalPoint: '12321',
           CreatedDate: '10-12-2022',
         },
+        {
+          No: 5,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 6,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 7,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 8,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 9,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 10,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
       ],
     }
+  },
+  computed: {
+    rows() {
+      return this.items.length
+    },
   },
 }
 </script>
