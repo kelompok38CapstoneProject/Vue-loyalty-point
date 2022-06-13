@@ -9,10 +9,11 @@
               <p>User Register</p>
             </div>
             <div class="icon">
-              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              <i class="fas fa-users"></i>
+              <!-- <i class="fa fa-graduation-cap" aria-hidden="true"></i> -->
             </div>
             <a href="#" class="card-box-footer"
-              >View More <i class="fa fa-arrow-circle-right"></i
+              >More Info <i class="fa fa-arrow-circle-right"></i
             ></a>
           </div>
         </div>
@@ -24,10 +25,10 @@
               <p>Total Produk</p>
             </div>
             <div class="icon">
-              <i class="fa fa-money" aria-hidden="true"></i>
+              <i class="fas fa-shopping-bag"></i>
             </div>
             <a href="#" class="card-box-footer"
-              >View More <i class="fa fa-arrow-circle-right"></i
+              >More Info <i class="fa fa-arrow-circle-right"></i
             ></a>
           </div>
         </div>
@@ -38,10 +39,10 @@
               <p>Low Stock Produk</p>
             </div>
             <div class="icon">
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
+              <i class="fas fa-box-open"></i>
             </div>
             <a href="#" class="card-box-footer"
-              >View More <i class="fa fa-arrow-circle-right"></i
+              >More Info <i class="fa fa-arrow-circle-right"></i
             ></a>
           </div>
         </div>
@@ -60,6 +61,7 @@ export default {}
   color: #fff;
   padding: 20px 10px 40px;
   margin: 20px 0px;
+  border-radius: 7px;
 }
 .card-box:hover {
   text-decoration: none;
@@ -100,7 +102,8 @@ export default {}
   text-align: center;
   padding: 3px 0;
   color: rgba(255, 255, 255, 0.8);
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 7px 7px;
   width: 100%;
   text-decoration: none;
 }
@@ -108,15 +111,12 @@ export default {}
   background: rgba(0, 0, 0, 0.3);
 }
 .bg-blue {
-  background-color: #00c0ef !important;
+  background-color: #3252df !important;
 }
 .bg-green {
-  background-color: #00a65a !important;
+  background-color: #62c91e !important;
 }
 .bg-orange {
-  background-color: #f39c12 !important;
-}
-.bg-red {
-  background-color: #d9534f !important;
+  background-color: #f23030 !important;
 }
 </style>
