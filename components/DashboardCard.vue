@@ -13,7 +13,7 @@
               <!-- <i class="fa fa-graduation-cap" aria-hidden="true"></i> -->
             </div>
             <a href="#" class="card-box-footer"
-              >View More <i class="fa fa-arrow-circle-right"></i
+              >More Info <i class="fa fa-arrow-circle-right"></i
             ></a>
           </div>
         </div>
@@ -28,7 +28,7 @@
               <i class="fas fa-shopping-bag"></i>
             </div>
             <a href="#" class="card-box-footer"
-              >View More <i class="fa fa-arrow-circle-right"></i
+              >More Info <i class="fa fa-arrow-circle-right"></i
             ></a>
           </div>
         </div>
@@ -42,7 +42,7 @@
               <i class="fas fa-box-open"></i>
             </div>
             <a href="#" class="card-box-footer"
-              >View More <i class="fa fa-arrow-circle-right"></i
+              >More Info <i class="fa fa-arrow-circle-right"></i
             ></a>
           </div>
         </div>

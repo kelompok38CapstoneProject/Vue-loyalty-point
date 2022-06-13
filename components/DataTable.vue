@@ -22,22 +22,149 @@
           </div>
 
           <div>
-            <b-button style="background-color: #3252df"
-              >Tambah User
-              <span class="text-sm"> <i class="fas fa-plus"></i></span
+            <b-button
+              id="show-btn"
+              @click="$bvModal.show('bv-modal-example')"
+              style="background-color: #3252df !important; color: white"
+              >Tambah Produk
+              <span class="text-sm"><i class="fas fa-plus"></i></span
             ></b-button>
+
+            <b-modal id="bv-modal-example" hide-footer>
+              <template
+                #modal-title
+                style="background-color: #3252df !important"
+              >
+                Tambah Products
+              </template>
+              <div class="d-block text-center">
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Nama Products"
+                ></b-form-input>
+                <br />
+                <b-form-select
+                  v-model="selected"
+                  :options="options1"
+                  class="mb-3"
+                  placeholder="Provider"
+                >
+                  <!-- This slot appears above the options from 'options' prop -->
+                  <template #first>
+                    <b-form-select-option :value="null" disabled
+                      >Provider</b-form-select-option
+                    >
+                  </template>
+                </b-form-select>
+                <br />
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Stock"
+                ></b-form-input>
+                <br />
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Point dibutuhkan"
+                ></b-form-input>
+                <br />
+                <b-form-select
+                  v-model="selected"
+                  :options="options2"
+                  class="mb-3"
+                  placeholder="Provider"
+                >
+                  <!-- This slot appears above the options from 'options' prop -->
+                  <template #first>
+                    <b-form-select-option :value="null" disabled
+                      >Status Product</b-form-select-option
+                    >
+                  </template>
+                </b-form-select>
+                <br />
+              </div>
+
+              <b-button
+                class="mt-3"
+                block
+                @click="$bvModal.hide('bv-modal-example')"
+                style="background-color: #3252df; width: 100px; height: 40px"
+                >Close</b-button
+              >
+            </b-modal>
+            <!-- End Form -->
           </div>
         </div>
+
+        <section>
+          <div class="mt-3">
+            <b-table
+              responsive
+              striped
+              hover
+              :items="items"
+              thead-class="primaryColor"
+            ></b-table>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      items: [
+        {
+          No: 1,
+          Username: 'Dickerson',
+          Email: 'Macdonald',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 2,
+          Username: 'Larsen',
+          Email: 'Shaw',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 3,
+          Username: 'Geneva',
+          Email: 'Wilson',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+        {
+          No: 4,
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
+          CreatedDate: '10-12-2022',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style>
+.primaryColor,
+.table thead th,
+thead,
+th {
+  background-color: #3252df !important;
+  color: white;
+}
 .rounded-md {
   border-radius: 10px;
 }

@@ -55,7 +55,7 @@
                 <div>
                   <div class="d-flex align-items-center">
                     <div class="h5 px-3">
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-users"></i>
                     </div>
                     <div>
                       <span class="text-md">Users</span>
@@ -67,7 +67,7 @@
                 <div>
                   <div class="d-flex align-items-center">
                     <div class="h5 px-3">
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-shopping-bag"></i>
                     </div>
                     <div>
                       <span class="text-md">Products</span>
