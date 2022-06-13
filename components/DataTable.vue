@@ -31,11 +31,8 @@
             ></b-button>
 
             <b-modal id="bv-modal-example" hide-footer>
-              <template
-                #modal-title
-                style="background-color: #3252df !important"
-              >
-                Tambah Products
+              <template #modal-title style="background-color: #3252df">
+                Tambah User
               </template>
               <div class="d-block text-center">
                 <b-form-input
@@ -85,14 +82,14 @@
                 </b-form-select>
                 <br />
               </div>
-
-              <b-button
-                class="mt-3"
-                block
-                @click="$bvModal.hide('bv-modal-example')"
-                style="background-color: #3252df; width: 100px; height: 40px"
-                >Close</b-button
-              >
+              <section class="d-flex mt-3">
+                <b-button class="button-save mr-4" block>Save</b-button>
+                <b-button
+                  class="button-close"
+                  @click="$bvModal.hide('bv-modal-example')"
+                  >Close</b-button
+                >
+              </section>
             </b-modal>
             <!-- End Form -->
           </div>
@@ -254,5 +251,30 @@ th {
   text-align: center;
   pointer-events: none;
   color: #aaa;
+}
+
+.button-save {
+  background-color: #3252df;
+  width: 100px;
+  height: 40px;
+}
+
+.button-save:hover {
+  background-color: #163ef1;
+  border: 2px solid #3252df;
+}
+
+.button-close {
+  border: 2px solid #3252df;
+  background-color: #fff;
+  width: 100px;
+  height: 40px;
+  color: #163ef1;
+}
+
+.button-close:hover {
+  border: 2px solid #3252df;
+  background-color: #3252df;
+  color: #fff;
 }
 </style>
