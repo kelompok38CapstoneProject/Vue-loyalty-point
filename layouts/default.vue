@@ -40,13 +40,13 @@
               <span class="text-base"> Main Menu</span>
 
               <div class="py-2 my-3 rounded-sm sidelink">
-                <div>
+                <div to="/">
                   <div class="d-flex align-items-center">
                     <div class="h5 px-3">
                       <i class="fas fa-home"></i>
                     </div>
                     <div>
-                      <nuxt-link to="/" class="text-md">Dashboard</nuxt-link>
+                      <div class="text-md">Dashboard</div>
                     </div>
                   </div>
                 </div>
@@ -64,16 +64,14 @@
                 </div>
               </div>
               <div class="py-2 my-3 rounded-sm sidelink">
-                <div>
-                  <div class="d-flex align-items-center">
-                    <div class="h5 px-3">
-                      <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <div>
-                      <nuxt-link to="products" class="text-md"
-                        >Products</nuxt-link
-                      >
-                    </div>
+                <div class="d-flex align-items-center">
+                  <div class="h5 px-3">
+                    <i class="fas fa-shopping-bag"></i>
+                  </div>
+                  <div>
+                    <nuxt-link to="products" class="text-md"
+                      >Products</nuxt-link
+                    >
                   </div>
                 </div>
               </div>
@@ -132,15 +130,57 @@
               >
                 <template #button-content>
                   <div class="text-secondary">
-                    <span class="h4"><i class="fas fa-user-circle"></i></span>
+                    <b-avatar variant="secondary" size="2em"></b-avatar>
                     <span class="h6"> <i class="fas fa-caret-down"></i></span>
                   </div>
                 </template>
-                <b-dropdown-item href="#">Action</b-dropdown-item>
-                <b-dropdown-item href="#">Another action</b-dropdown-item>
-                <b-dropdown-item href="#"
-                  >Something else here...</b-dropdown-item
-                >
+                <b-dropdown-item href="#">
+                  <div class="d-flex align-items-center">
+                    <b-avatar size="2em" variant="primary"></b-avatar>
+                    <div class="mx-3">
+                      <div style="font-size: 14px; font-weight: 500">Andi</div>
+                      <div
+                        style="
+                          font-size: 12px;
+                          font-weight: 400;
+                          color: #88888a;
+                        "
+                      >
+                        Admin
+                      </div>
+                    </div>
+                  </div>
+                </b-dropdown-item>
+                <b-dropdown-item to="/profile">
+                  <div class="d-flex align-items-center">
+                    <div class="h5 mt-1">
+                      <i class="far fa-user"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm ml-2">View my profile</div>
+                    </div>
+                  </div>
+                </b-dropdown-item>
+                <b-dropdown-item to="/settings">
+                  <div class="d-flex align-items-center">
+                    <div class="h5 mt-1">
+                      <i class="fas fa-cog"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm ml-2">Settings</div>
+                    </div>
+                  </div>
+                </b-dropdown-item>
+                <b-dropdown-item href="/login">
+                  <div class="d-flex align-items-center">
+                    <div class="h5 mt-1">
+                      <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm ml-2">Logout</div>
+                    </div>
+                  </div>
+                </b-dropdown-item>
               </b-dropdown>
             </div>
           </ul>
