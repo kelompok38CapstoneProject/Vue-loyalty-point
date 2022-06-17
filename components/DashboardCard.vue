@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div>
+    <div class="my-4">
       <div class="row">
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-12">
           <div class="card-box bg-blue">
             <div class="inner">
               <h3>00</h3>
@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-12">
           <div class="card-box bg-green">
             <div class="inner">
               <h3>0</h3>
@@ -32,7 +32,7 @@
             ></a>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-12">
           <div class="card-box bg-orange">
             <div class="inner">
               <h3>0</h3>
@@ -60,7 +60,7 @@ export default {}
   position: relative;
   color: #fff;
   padding: 20px 10px 40px;
-  margin: 20px 0px;
+  margin: 10px 0px;
   border-radius: 7px;
 }
 .card-box:hover {

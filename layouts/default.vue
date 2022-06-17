@@ -46,7 +46,7 @@
                       <i class="fas fa-home"></i>
                     </div>
                     <div>
-                      <span class="text-md">Dashboard</span>
+                      <nuxt-link to="/" class="text-md">Dashboard</nuxt-link>
                     </div>
                   </div>
                 </div>
@@ -58,7 +58,7 @@
                       <i class="fas fa-users"></i>
                     </div>
                     <div>
-                      <span class="text-md">Users</span>
+                      <nuxt-link to="users" class="text-md">Users</nuxt-link>
                     </div>
                   </div>
                 </div>
@@ -70,7 +70,9 @@
                       <i class="fas fa-shopping-bag"></i>
                     </div>
                     <div>
-                      <span class="text-md">Products</span>
+                      <nuxt-link to="products" class="text-md"
+                        >Products</nuxt-link
+                      >
                     </div>
                   </div>
                 </div>
