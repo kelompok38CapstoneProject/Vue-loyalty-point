@@ -20,10 +20,7 @@
 
         <div class="position-sticky">
           <div class="px-3">
-            <div
-              class="mt-5 py-1 rounded-sm"
-              style="background-color: #546fe4; color: #fff"
-            >
+            <div class="mt-5 py-1 rounded-sm btn-profile">
               <div>
                 <div class="d-flex align-items-center">
                   <div class="h2 px-2">
@@ -31,7 +28,9 @@
                   </div>
                   <div>
                     <span class="text-base">Andi</span> <br />
-                    <span class="text-sm">View My Profile</span>
+                    <nuxt-link to="/profile" class="text-sm underln"
+                      >View My Profile</nuxt-link
+                    >
                   </div>
                 </div>
               </div>
@@ -40,7 +39,7 @@
               <span class="text-base"> Main Menu</span>
 
               <div class="py-2 my-3 rounded-sm sidelink">
-                <div to="/">
+                <nuxt-link to="/">
                   <div class="d-flex align-items-center">
                     <div class="h5 px-3">
                       <i class="fas fa-home"></i>
@@ -49,31 +48,31 @@
                       <div class="text-md">Dashboard</div>
                     </div>
                   </div>
-                </div>
+                </nuxt-link>
               </div>
               <div class="py-2 my-3 rounded-sm sidelink">
-                <div>
+                <nuxt-link to="/users">
                   <div class="d-flex align-items-center">
                     <div class="h5 px-3">
                       <i class="fas fa-users"></i>
                     </div>
                     <div>
-                      <nuxt-link to="users" class="text-md">Users</nuxt-link>
+                      <div to="users" class="text-md">Users</div>
                     </div>
                   </div>
-                </div>
+                </nuxt-link>
               </div>
               <div class="py-2 my-3 rounded-sm sidelink">
-                <div class="d-flex align-items-center">
-                  <div class="h5 px-3">
-                    <i class="fas fa-shopping-bag"></i>
+                <nuxt-link to="/products">
+                  <div class="d-flex align-items-center">
+                    <div class="h5 px-3">
+                      <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div>
+                      <div to="products" class="text-md">Products</div>
+                    </div>
                   </div>
-                  <div>
-                    <nuxt-link to="products" class="text-md"
-                      >Products</nuxt-link
-                    >
-                  </div>
-                </div>
+                </nuxt-link>
               </div>
             </div>
           </div>
@@ -210,6 +209,15 @@ export default {}
     padding-left: 240px;
   }
 }
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+a:hover {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
 
 .text-md {
   font-size: 20px;
@@ -256,6 +264,21 @@ export default {}
 .sidelink:hover {
   background-color: #fff;
   color: #546fe4;
+}
+
+.btn-profile {
+  background-color: #546fe4;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.btn-profile:hover {
+  background-color: #fff;
+  color: #546fe4;
+}
+
+.underln:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 991.98px) {

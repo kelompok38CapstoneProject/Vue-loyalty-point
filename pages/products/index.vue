@@ -9,7 +9,7 @@
       <ListGroup />
     </div>
 
-    <DataTable />
+    <DataTableProduct />
   </div>
 </template>
 <script>

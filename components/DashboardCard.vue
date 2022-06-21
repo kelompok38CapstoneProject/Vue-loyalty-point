@@ -3,34 +3,38 @@
     <div class="my-4">
       <div class="row">
         <div class="col-lg-4 col-sm-12">
-          <div class="card-box bg-blue">
-            <div class="inner">
-              <h3>00</h3>
-              <p>User Register</p>
+          <nuxt-link to="/users">
+            <div class="card-box bg-blue">
+              <div class="inner">
+                <h3>00</h3>
+                <p>User Register</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-users"></i>
+                <!-- <i class="fa fa-graduation-cap" aria-hidden="true"></i> -->
+              </div>
+              <a href="#" class="card-box-footer"
+                >More Info <i class="fa fa-arrow-circle-right"></i
+              ></a>
             </div>
-            <div class="icon">
-              <i class="fas fa-users"></i>
-              <!-- <i class="fa fa-graduation-cap" aria-hidden="true"></i> -->
-            </div>
-            <a href="#" class="card-box-footer"
-              >More Info <i class="fa fa-arrow-circle-right"></i
-            ></a>
-          </div>
+          </nuxt-link>
         </div>
 
         <div class="col-lg-4 col-sm-12">
-          <div class="card-box bg-green">
-            <div class="inner">
-              <h3>0</h3>
-              <p>Total Produk</p>
+          <nuxt-link to="/users">
+            <div class="card-box bg-green">
+              <div class="inner">
+                <h3>0</h3>
+                <p>Total Produk</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+              <a href="#" class="card-box-footer"
+                >More Info <i class="fa fa-arrow-circle-right"></i
+              ></a>
             </div>
-            <div class="icon">
-              <i class="fas fa-shopping-bag"></i>
-            </div>
-            <a href="#" class="card-box-footer"
-              >More Info <i class="fa fa-arrow-circle-right"></i
-            ></a>
-          </div>
+          </nuxt-link>
         </div>
         <div class="col-lg-4 col-sm-12">
           <div class="card-box bg-orange">

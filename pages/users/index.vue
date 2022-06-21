@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div class="text-xl mb-3">Users Management</div>
-    <DataTable />
+    <DataTableUsers />
   </div>
 </template>
 <script>
-import DataTable from '@/components/DataTable.vue'
+import DataTableUsers from '@/components/DataTableUsers.vue'
 export default {
   components: {
-    DataTable,
+    DataTableUsers,
   },
   data() {
     return {

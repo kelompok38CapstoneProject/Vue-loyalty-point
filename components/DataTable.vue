@@ -32,63 +32,47 @@
 
             <b-modal id="bv-modal-example" hide-footer>
               <template #modal-title style="background-color: #3252df">
-                Tambah User
+                Tambah Customer
               </template>
               <div class="d-block text-center">
                 <b-form-input
                   id="inline-form-input-name"
                   class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Nama Products"
-                ></b-form-input>
-                <br />
-                <b-form-select
-                  v-model="selected"
-                  :options="options1"
-                  class="mb-3"
-                  placeholder="Provider"
-                >
-                  <!-- This slot appears above the options from 'options' prop -->
-                  <template #first>
-                    <b-form-select-option :value="null" disabled
-                      >Provider</b-form-select-option
-                    >
-                  </template>
-                </b-form-select>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Stock"
+                  placeholder="Nama Lengkap"
                 ></b-form-input>
                 <br />
                 <b-form-input
                   id="inline-form-input-name"
                   class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Point dibutuhkan"
+                  placeholder="Email"
                 ></b-form-input>
                 <br />
-                <b-form-select
-                  v-model="selected"
-                  :options="options2"
-                  class="mb-3"
-                  placeholder="Provider"
-                >
-                  <!-- This slot appears above the options from 'options' prop -->
-                  <template #first>
-                    <b-form-select-option :value="null" disabled
-                      >Status Product</b-form-select-option
-                    >
-                  </template>
-                </b-form-select>
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Nomor telepon"
+                ></b-form-input>
+                <br />
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Password"
+                ></b-form-input>
+                <br />
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Point"
+                ></b-form-input>
                 <br />
               </div>
-              <section class="d-flex mt-3">
-                <b-button class="button-save mr-4" block>Save</b-button>
+              <section class="d-flex mt-3 justify-content-end">
                 <b-button
-                  class="button-close"
+                  class="button-close mr-4"
                   @click="$bvModal.hide('bv-modal-example')"
                   >Close</b-button
                 >
+                <b-button class="button-save" block>Save</b-button>
               </section>
             </b-modal>
             <!-- End Form -->
