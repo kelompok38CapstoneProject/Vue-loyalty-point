@@ -28,7 +28,7 @@
                   <div class="form-group">
                     <div class="icon-addon addon-lg">
                       <input
-                        type="text"
+                        type="password"
                         style="background-color: #f4f6f8; border: none"
                         placeholder="Password"
                         class="form-control"
@@ -39,12 +39,20 @@
                   </div>
 
                   <div class="form-group">
-                    <button
-                      type="submit"
-                      class="btn btn-block text-white py-2 rounded-md login-btn"
-                    >
-                      Masuk
-                    </button>
+                    <nuxt-link to="/">
+                      <button
+                        type="submit"
+                        class="
+                          btn btn-block
+                          text-white
+                          py-2
+                          rounded-md
+                          login-btn
+                        "
+                      >
+                        Masuk
+                      </button>
+                    </nuxt-link>
                   </div>
                   <!-- form-group// -->
                 </form>
