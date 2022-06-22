@@ -20,6 +20,29 @@
               />
             </div>
           </div>
+          <div style="margin-right: 200px">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              style="width: 165px; height: 38px"
+            >
+              <option selected>All Providers</option>
+              <option value="1">Telkomsel</option>
+              <option value="2">IM3</option>
+              <option value="3">XL</option>
+            </select>
+
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              style="width: 165px; height: 38px"
+            >
+              <option selected>All Stock</option>
+              <option value="1">Ready</option>
+              <option value="2">Low Stock</option>
+              <option value="3">Out of Stock</option>
+            </select>
+          </div>
 
           <div>
             <span class="mr-2">
@@ -37,9 +60,7 @@
             ></b-button>
 
             <b-modal id="bv-modal-example" hide-footer>
-              <template #modal-title style="background-color: #3252df">
-                Tambah Products
-              </template>
+              <template #modal-title> Tambah Products </template>
               <div class="d-block text-center">
                 <b-form-input
                   id="inline-form-input-name"
@@ -150,7 +171,7 @@
 
         <section class="d-flex justify-content-between align-items-center mt-5">
           <div>
-            <h6>Page {{ currentPage }}</h6>
+            <h6>Show per page {{ currentPage }}</h6>
           </div>
 
           <b-pagination
@@ -174,84 +195,84 @@ export default {
       modes: ['multi', 'single', 'range'],
       fields: [
         'selected',
-        'Username',
-        'Email',
-        'PhoneNumber',
-        'TotalPoint',
-        'CreatedDate',
+        'NamaProduk',
+        'Stock',
+        'PointDibutuhkan',
+        'UpdatedDate',
+        'Status',
         'Action',
       ],
       items: [
         {
           No: 1,
-          Username: 'Alvaro',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xl',
         },
         {
           No: 2,
-          Username: 'Alvaro',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xx',
         },
         {
           No: 3,
-          Username: 'Alvaro3',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xl',
         },
         {
           No: 4,
-          Username: 'Alvaro4',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xl',
         },
         {
           No: 5,
-          Username: 'Alvaro5',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xl',
         },
         {
           No: 6,
-          Username: 'Alvaro6',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xl',
         },
         {
           No: 7,
-          Username: 'Alvaro7',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xl',
         },
         {
           No: 8,
-          Username: 'Alvaro8',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
-          CreatedDate: '10-12-2022',
+          NamaProduk: 'Telkomsel Pulsa 5000',
+          Stock: '100',
+          PointDibutuhkan: '5000',
+          UpdatedDate: '10-12-2022',
+          Status: 'Ready',
           provider: 'xx',
         },
       ],
@@ -277,3 +298,12 @@ export default {
   },
 }
 </script>
+<style>
+.modal-header {
+  color: white;
+  background-color: #3252df;
+}
+.close {
+  color: white;
+}
+</style>

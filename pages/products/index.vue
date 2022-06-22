@@ -18,15 +18,15 @@ export default {
     return {
       items: [
         {
-          text: 'Admin',
+          text: 'Dashboard',
           href: '#',
         },
         {
-          text: 'Manage',
+          text: 'Product',
           href: '#',
         },
         {
-          text: 'Library',
+          text: 'Pulsa',
           active: true,
         },
       ],
