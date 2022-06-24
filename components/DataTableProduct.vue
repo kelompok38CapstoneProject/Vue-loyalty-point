@@ -46,7 +46,7 @@
 
           <div>
             <span class="mr-2">
-              <b-button variant="outline-danger"
+              <b-button @click="clearSelected" variant="outline-danger"
                 ><i class="fas fa-trash-alt"></i
               ></b-button>
             </span>
@@ -165,7 +165,7 @@
           </b-table>
           <p>
             <b-button size="sm" @click="selectAllRows">Select all</b-button>
-            <b-button size="sm" @click="clearSelected">Clear selected</b-button>
+            <!-- <b-button size="sm" @click="clearSelected">Clear selected</b-button> -->
           </p>
         </section>
 
@@ -210,7 +210,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xl',
+          Action: '...',
         },
         {
           No: 2,
@@ -219,7 +219,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xx',
+          Action: '...',
         },
         {
           No: 3,
@@ -228,7 +228,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xl',
+          Action: '...',
         },
         {
           No: 4,
@@ -237,7 +237,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xl',
+          Action: '...',
         },
         {
           No: 5,
@@ -246,7 +246,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xl',
+          Action: '...',
         },
         {
           No: 6,
@@ -255,7 +255,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xl',
+          Action: '...',
         },
         {
           No: 7,
@@ -264,7 +264,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xl',
+          Action: '...',
         },
         {
           No: 8,
@@ -273,7 +273,7 @@ export default {
           PointDibutuhkan: '5000',
           UpdatedDate: '10-12-2022',
           Status: 'Ready',
-          provider: 'xx',
+          Action: '...',
         },
       ],
       selectMode: 'multi',
