@@ -15,7 +15,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Cari data produk"
+                placeholder="Cari data customer"
                 style="background-color: #f4f6f8"
               />
             </div>
@@ -32,7 +32,7 @@
               id="show-btn"
               @click="$bvModal.show('bv-modal-example')"
               style="background-color: #3252df !important; color: white"
-              >Tambah Produk
+              >Tambah User
               <span class="text-sm"><i class="fas fa-plus"></i></span
             ></b-button>
 
@@ -44,48 +44,32 @@
                 <b-form-input
                   id="inline-form-input-name"
                   class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Nama Products"
-                ></b-form-input>
-                <br />
-                <b-form-select
-                  v-model="selected"
-                  :options="options1"
-                  class="mb-3"
-                  placeholder="Provider"
-                >
-                  <!-- This slot appears above the options from 'options' prop -->
-                  <template #first>
-                    <b-form-select-option :value="null" disabled
-                      >Provider</b-form-select-option
-                    >
-                  </template>
-                </b-form-select>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Stock"
+                  placeholder="Nama Lengkap"
                 ></b-form-input>
                 <br />
                 <b-form-input
                   id="inline-form-input-name"
                   class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Point dibutuhkan"
+                  placeholder="Email"
                 ></b-form-input>
                 <br />
-                <b-form-select
-                  v-model="selected"
-                  :options="options2"
-                  class="mb-3"
-                  placeholder="Provider"
-                >
-                  <!-- This slot appears above the options from 'options' prop -->
-                  <template #first>
-                    <b-form-select-option :value="null" disabled
-                      >Status Product</b-form-select-option
-                    >
-                  </template>
-                </b-form-select>
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Phone Number"
+                ></b-form-input>
+                <br />
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Password"
+                ></b-form-input>
+                <br />
+                <b-form-input
+                  id="inline-form-input-name"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                  placeholder="Point"
+                ></b-form-input>
                 <br />
               </div>
               <section class="d-flex mt-3">
@@ -134,7 +118,7 @@
 
         <section class="d-flex justify-content-between align-items-center mt-5">
           <div>
-            <h6>Page {{ currentPage }}</h6>
+            <h6>Show per page {{ currentPage }}</h6>
           </div>
 
           <b-pagination
@@ -253,3 +237,12 @@ export default {
   },
 }
 </script>
+<style>
+.modal-header {
+  color: white;
+  background-color: #3252df;
+}
+.close {
+  color: white;
+}
+</style>
