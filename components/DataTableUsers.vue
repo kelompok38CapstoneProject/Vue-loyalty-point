@@ -23,7 +23,7 @@
 
           <div>
             <span class="mr-2">
-              <b-button variant="outline-danger"
+              <b-button @click="clearSelected" variant="outline-danger"
                 ><i class="fas fa-trash-alt"></i
               ></b-button>
             </span>
@@ -112,7 +112,7 @@
           </b-table>
           <p>
             <b-button size="sm" @click="selectAllRows">Select all</b-button>
-            <b-button size="sm" @click="clearSelected">Clear selected</b-button>
+            <!-- <b-button size="sm" @click="clearSelected">Clear selected</b-button> -->
           </p>
         </section>
 
@@ -152,67 +152,75 @@ export default {
       items: [
         {
           No: 1,
-          Username: 'Alvaro',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Andi',
+          Email: 'andi@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 2,
-          Username: 'Alvaro',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Ana',
+          Email: 'ana@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 3,
-          Username: 'Alvaro3',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Hairul',
+          Email: 'hairul@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 4,
-          Username: 'Alvaro4',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'James',
+          Email: 'james@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 5,
-          Username: 'Alvaro5',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Jono',
+          Email: 'jono@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 6,
-          Username: 'Alvaro6',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Hendi',
+          Email: 'hendi@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 7,
-          Username: 'Alvaro7',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Maria',
+          Email: 'maria@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
         {
           No: 8,
-          Username: 'Alvaro8',
-          Email: 'andrewalvaroh@gmail.com',
-          PhoneNumber: '098821312',
-          TotalPoint: '123',
+          Username: 'Greace',
+          Email: 'greace@gmail.com',
+          PhoneNumber: '081291273233',
+          TotalPoint: '10.000',
           CreatedDate: '10-12-2022',
+          Action: '...',
         },
       ],
       selectMode: 'multi',

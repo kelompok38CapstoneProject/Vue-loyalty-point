@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <b-breadcrumb
-      style="background-color: #f4f6f8"
+      style="background-color: #f4f6f8; margin-left: -15px"
       :items="items"
     ></b-breadcrumb>
     <div class="text-xl">Overview Stock Pulsa</div>
