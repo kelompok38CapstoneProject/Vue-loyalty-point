@@ -12,18 +12,18 @@
             <div class="card-body py-4 text-center">
               <section class="py" style="width: 80%; margin: 0 auto">
                 <form>
-                  <h5 class="mb-4" style="font-weight: 500; color: #88888A;">
+                  <h5 class="mb-4" style="font-weight: 500; color: #88888a">
                     We’re sorry, the page you requested could not be found.
                     Please go back to the homepage
                   </h5>
 
                   <div class="form-group">
-                    <button
-                      type="submit"
+                    <nuxt-link
+                      to="/"
                       class="btn btn-block text-white py-2 rounded-md login-btn"
                     >
                       Home
-                    </button>
+                    </nuxt-link>
                   </div>
                   <!-- form-group// -->
                 </form>
