@@ -160,7 +160,7 @@
                     </div>
                   </div>
                 </b-dropdown-item>
-                <b-dropdown-item to="/settings">
+                <!-- <b-dropdown-item to="/settings">
                   <div class="d-flex align-items-center">
                     <div class="h5 mt-1">
                       <i class="fas fa-cog"></i>
@@ -169,7 +169,7 @@
                       <div class="text-sm ml-2">Settings</div>
                     </div>
                   </div>
-                </b-dropdown-item>
+                </b-dropdown-item> -->
                 <b-dropdown-item href="/login">
                   <div class="d-flex align-items-center">
                     <div class="h5 mt-1">

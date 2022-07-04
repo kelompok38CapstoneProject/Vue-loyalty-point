@@ -37,7 +37,7 @@
                 >Tambah User
                 <span class="text-sm"><i class="fas fa-plus"></i></span
               ></b-button>
-
+              <!-- Form -->
               <b-modal id="bv-modal-example" hide-footer>
                 <template #modal-title style="background-color: #3252df">
                   Tambah User
@@ -100,7 +100,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(user, index) in users" :key="index">
+                <tr class="users" v-for="(user, index) in users" :key="index">
                   <td>{{ user.id }}</td>
                   <td>{{ user.name }}</td>
                   <td>{{ user.email }}</td>
@@ -108,7 +108,14 @@
                   <td>{{ user.point }}</td>
                   <td>{{ user.CreatedAt }}</td>
                   <td>
-                    <b-button variant="light"><i class="fas fa-three-dots"></i></b-button>
+                    <b-dropdown class="mx-1" right>
+                      <b-dropdown-item
+                        ><i class="fas fa-pencil"></i> Update</b-dropdown-item
+                      >
+                      <b-dropdown-item
+                        ><i class="fas fa-trash"></i> Delete</b-dropdown-item
+                      >
+                    </b-dropdown>
                   </td>
                 </tr>
               </tbody>
@@ -136,6 +143,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -144,11 +152,66 @@ export default {
       users: [],
     }
   },
+  // async fetch() {
+  //   this.users = await fetch('http://13.229.128.27:8080/users/').then((res) =>
+  //     res.json()
+  //   )
+  // },
+  // Vue axios GET request
   async fetch() {
-    this.users = await fetch('http://13.229.128.27:8080/users/').then((res) =>
-      res.json()
-    )
+    try {
+      const users = await axios.get('http://13.229.128.27:8080/users/')
+
+      this.users = users.data
+    } catch (e) {
+      console.log(e)
+    }
   },
+  // Vue axios POST request
+  async storeUser() {
+    try {
+      const users = await axios.post('http://13.229.128.27:8080/users/', {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        point: this.point,
+        CreatedAt: this.CreatedAt,
+      })
+
+      console.log(users)
+    } catch (e) {
+      console.log(e)
+    }
+  },
+  // Vue axios PUT request
+  async updateUser() {
+    try {
+      const users = await axios.put(
+        'http://13.229.128.27:8080/users/' + this.user.id,
+        {
+          name: this.user.name,
+          email: this.user.email,
+        }
+      )
+
+      console.log(user.data)
+      alert('User updated!')
+    } catch (e) {
+      console.log(e)
+    }
+  },
+  // Vue axios DELETE request
+  async deleteUser(id) {
+    let x = window.confirm('You want to delete the user?')
+
+    if (x) {
+      const users = await axios.delete('http://13.229.128.27:8080/users/' + id)
+
+      console.log(users)
+      alert('User deleted!')
+    }
+  },
+  methods: {},
 }
 </script>
 <style>
