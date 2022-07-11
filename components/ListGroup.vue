@@ -328,7 +328,7 @@ export default {
 
 <style>
 #multipleItems .carousel-inner {
-  width: 80%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -346,7 +346,6 @@ export default {
   left: 900px;
   margin-top: -330px;
   /* margin-left: 180px; */
-    
 }
 .carousel-control-next {
   right: 0;
@@ -354,8 +353,8 @@ export default {
   /* margin-right: 90px; */
 }
 .carousel {
-    position: auto;
-    /* margin-left: -150px;
+  position: auto;
+  /* margin-left: -150px;
     margin-right: -150px; */
 }
 </style>
