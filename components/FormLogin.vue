@@ -77,8 +77,8 @@ export default {
         let rs = await this.$axios.post('login/admin', this.frm)
         console.log(rs)
         let { data } = rs
-        localStorage.setItem('user', JSON.stringify(data))
-        localStorage.setItem('token', JSON.stringify(data.token))
+        localStorage.setItem('user', JSON.stringify(data.user))
+        localStorage.setItem('token', data.token)
         this.$toast('Ok')
         this.$router.push('/')
       } catch (error) {
