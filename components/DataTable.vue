@@ -15,7 +15,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Cari data produk"
+                placeholder="Cari data User"
+                v-model="filter"
                 style="background-color: #f4f6f8"
               />
             </div>
@@ -31,52 +32,74 @@
             ></b-button>
 
             <b-modal id="bv-modal-example" hide-footer>
-              <template #modal-title style="background-color: #3252df">
+              <template
+                #modal-title
+                style="background-color: #3252df; color: white"
+              >
                 Tambah Customer
               </template>
-              <div class="d-block text-center">
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Nama Lengkap"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Email"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Nomor telepon"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Password"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Point"
-                ></b-form-input>
-                <br />
-              </div>
-              <section class="d-flex mt-3 justify-content-end">
-                <b-button
-                  class="button-close mr-4"
-                  @click="$bvModal.hide('bv-modal-example')"
-                  >Close</b-button
-                >
-                <b-button class="button-save" block>Save</b-button>
-              </section>
+              <b-form @submit="onSubmit">
+                <div class="d-block text-center">
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.No"
+                    placeholder="ID"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.Username"
+                    placeholder="Nama Lengkap"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.Email"
+                    placeholder="Email"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    placeholder="Nomor telepon"
+                    v-model="form.PhoneNumber"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.TotalPoint"
+                    placeholder="Total Point"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.CreatedDate"
+                    placeholder="Created Date"
+                  ></b-form-input>
+                  <br />
+                </div>
+                <section class="d-flex mt-3 justify-content-end">
+                  <b-button
+                    class="button-close mr-4"
+                    @click="$bvModal.hide('bv-modal-example')"
+                    >Close</b-button
+                  >
+                  <b-button class="button-save" type="submit" block
+                    >Save</b-button
+                  >
+                </section>
+              </b-form>
             </b-modal>
             <!-- End Form -->
           </div>
+          <!-- <b-card class="mt-3" header="Form Data Result">
+            <pre class="m-0">{{ form }}</pre>
+          </b-card> -->
         </div>
 
         <section>
@@ -88,6 +111,7 @@
               id="my-table"
               :per-page="perPage"
               :current-page="currentPage"
+              :fields="fields"
               :items="items"
               thead-class="primaryColor"
             ></b-table>
@@ -117,6 +141,15 @@ export default {
     return {
       perPage: 5,
       currentPage: 1,
+      filter: '',
+      fields: [
+        'No',
+        'Username',
+        'Email',
+        'PhoneNumber',
+        'TotalPoint',
+        'CreatedDate',
+      ],
       items: [
         {
           No: 1,
@@ -166,44 +199,53 @@ export default {
           TotalPoint: '12321',
           CreatedDate: '10-12-2022',
         },
-        {
-          No: 7,
-          Username: 'Jami',
-          Email: 'Carney',
-          PhoneNumber: '12321',
-          TotalPoint: '12321',
-          CreatedDate: '10-12-2022',
-        },
-        {
-          No: 8,
-          Username: 'Jami',
-          Email: 'Carney',
-          PhoneNumber: '12321',
-          TotalPoint: '12321',
-          CreatedDate: '10-12-2022',
-        },
-        {
-          No: 9,
-          Username: 'Jami',
-          Email: 'Carney',
-          PhoneNumber: '12321',
-          TotalPoint: '12321',
-          CreatedDate: '10-12-2022',
-        },
-        {
-          No: 10,
-          Username: 'Jami',
-          Email: 'Carney',
-          PhoneNumber: '12321',
-          TotalPoint: '12321',
-          CreatedDate: '10-12-2022',
-        },
       ],
+      form: {
+        No: '',
+        Username: '',
+        Email: '',
+        PhoneNumber: '',
+        TotalPoint: '',
+        CreatedDate: '',
+      },
     }
   },
   computed: {
     rows() {
       return this.items.length
+    },
+    filteredRows() {
+      return this.rows.filter((row) => {
+        const Username = row.Username.toString().toLowerCase()
+        const No = row.department.toLowerCase()
+        const searchTerm = this.filter.toLowerCase()
+
+        return Username.includes(searchTerm) || No.includes(searchTerm)
+      })
+    },
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault()
+      alert(JSON.stringify(this.form))
+      this.items.push({
+        No: this.form.No,
+        Username: this.form.Username,
+        Email: this.form.Email,
+        PhoneNumber: this.form.PhoneNumber,
+        TotalPoint: this.form.TotalPoint,
+        CreatedDate: this.form.CreatedDate,
+      })
+    },
+    highlightMatches(text) {
+      const matchExists = text.toLowerCase().includes(this.filter.toLowerCase())
+      if (!matchExists) return text
+
+      const re = new RegExp(this.filter, 'ig')
+      return text.replace(
+        re,
+        (matchedText) => `<strong>${matchedText}</strong>`
+      )
     },
   },
 }

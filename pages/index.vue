@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <span class="text-xl">Dashboard</span>
-    {{ dataUser }}
+    <!-- {{ dataUser }} -->
     <section>
       <DashboardCard />
       <DataTable />
