@@ -15,110 +15,129 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Cari data customer"
+                placeholder="Cari data User"
+                v-model="filter"
                 style="background-color: #f4f6f8"
               />
             </div>
           </div>
 
           <div>
-            <span class="mr-2">
-              <b-button @click="clearSelected" variant="outline-danger"
-                ><i class="fas fa-trash-alt"></i
-              ></b-button>
-            </span>
-
             <b-button
               id="show-btn"
               @click="$bvModal.show('bv-modal-example')"
               style="background-color: #3252df !important; color: white"
-              >Tambah User
+              >Tambah Produk
               <span class="text-sm"><i class="fas fa-plus"></i></span
             ></b-button>
 
             <b-modal id="bv-modal-example" hide-footer>
-              <template #modal-title style="background-color: #3252df">
-                Tambah User
+              <template
+                #modal-title
+                style="background-color: #3252df; color: white"
+              >
+                Tambah Customer
               </template>
-              <div class="d-block text-center">
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Nama Lengkap"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Email"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Phone Number"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Password"
-                ></b-form-input>
-                <br />
-                <b-form-input
-                  id="inline-form-input-name"
-                  class="mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="Point"
-                ></b-form-input>
-                <br />
-              </div>
-              <section class="d-flex mt-3">
-                <b-button class="button-save mr-4" block>Save</b-button>
-                <b-button
-                  class="button-close"
-                  @click="$bvModal.hide('bv-modal-example')"
-                  >Close</b-button
-                >
-              </section>
+              <b-form @submit="onSubmit">
+                <div class="d-block text-center">
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.No"
+                    placeholder="ID"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.Username"
+                    placeholder="Nama Lengkap"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.Email"
+                    placeholder="Email"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    placeholder="Nomor telepon"
+                    v-model="form.PhoneNumber"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.TotalPoint"
+                    placeholder="Total Point"
+                  ></b-form-input>
+                  <br />
+                  <b-form-input
+                    id="inline-form-input-name"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                    v-model="form.CreatedDate"
+                    placeholder="Created Date"
+                  ></b-form-input>
+                  <br />
+                </div>
+                <section class="d-flex mt-3 justify-content-end">
+                  <b-button
+                    class="button-close mr-4"
+                    @click="$bvModal.hide('bv-modal-example')"
+                    >Close</b-button
+                  >
+                  <b-button class="button-save" type="submit" block
+                    >Save</b-button
+                  >
+                </section>
+              </b-form>
             </b-modal>
             <!-- End Form -->
           </div>
+          <!-- <b-card class="mt-3" header="Form Data Result">
+            <pre class="m-0">{{ form }}</pre>
+          </b-card> -->
         </div>
+
         <section>
-          <b-table
-            striped
-            hover
-            :per-page="perPage"
-            :current-page="currentPage"
-            :items="items"
-            :fields="fields"
-            :select-mode="selectMode"
-            responsive="sm"
-            ref="selectableTable"
-            selectable
-            @row-selected="onRowSelected"
-          >
-            <!-- Example scoped slot for select state illustrative purposes -->
-            <template #cell(selected)="{ rowSelected }">
-              <template v-if="rowSelected">
-                <span aria-hidden="true">&check;</span>
-                <span class="sr-only">Selected</span>
+          <div class="mt-3">
+            <b-table
+              responsive
+              striped
+              hover
+              id="my-table"
+              :per-page="perPage"
+              :current-page="currentPage"
+              :fields="fields"
+              :items="items"
+              thead-class="primaryColor"
+            >
+              <template #cell(actions)="row">
+                <b-button
+                  size="sm"
+                  @click="info(row.item, row.index, $event.target)"
+                  class="mr-1 bg-primary"
+                >
+                  Edit
+                </b-button>
+                <b-button
+                  size="sm"
+                  @click="del(row.item, row.index, $event.target)"
+                  class="mr-1 btn btn-danger"
+                >
+                  Delete
+                </b-button>
               </template>
-              <template v-else>
-                <span aria-hidden="true">&nbsp;</span>
-                <span class="sr-only">Not selected</span>
-              </template>
-            </template>
-          </b-table>
-          <p>
-            <b-button size="sm" @click="selectAllRows">Select all</b-button>
-            <!-- <b-button size="sm" @click="clearSelected">Clear selected</b-button> -->
-          </p>
+            </b-table>
+          </div>
         </section>
 
         <section class="d-flex justify-content-between align-items-center mt-5">
           <div>
-            <h6>Show per page {{ currentPage }}</h6>
+            <h6>Page {{ currentPage }}</h6>
           </div>
 
           <b-pagination
@@ -139,118 +158,170 @@ export default {
     return {
       perPage: 5,
       currentPage: 1,
-      modes: ['multi', 'single', 'range'],
+      filter: '',
       fields: [
-        'selected',
+        'No',
         'Username',
         'Email',
         'PhoneNumber',
         'TotalPoint',
         'CreatedDate',
-        'Action',
+        { key: 'actions', label: 'Actions' },
       ],
       items: [
         {
           No: 1,
-          Username: 'Andi',
-          Email: 'andi@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
+          Username: 'Dickerson',
+          Email: 'Macdonald',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
           CreatedDate: '10-12-2022',
-          Action: '...',
         },
         {
           No: 2,
-          Username: 'Ana',
-          Email: 'ana@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
+          Username: 'Larsen',
+          Email: 'Shaw',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
           CreatedDate: '10-12-2022',
-          Action: '...',
         },
         {
           No: 3,
-          Username: 'Hairul',
-          Email: 'hairul@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
+          Username: 'Geneva',
+          Email: 'Wilson',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
           CreatedDate: '10-12-2022',
-          Action: '...',
         },
         {
           No: 4,
-          Username: 'James',
-          Email: 'james@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
           CreatedDate: '10-12-2022',
-          Action: '...',
         },
         {
           No: 5,
-          Username: 'Jono',
-          Email: 'jono@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
           CreatedDate: '10-12-2022',
-          Action: '...',
         },
         {
           No: 6,
-          Username: 'Hendi',
-          Email: 'hendi@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
+          Username: 'Jami',
+          Email: 'Carney',
+          PhoneNumber: '12321',
+          TotalPoint: '12321',
           CreatedDate: '10-12-2022',
-          Action: '...',
-        },
-        {
-          No: 7,
-          Username: 'Maria',
-          Email: 'maria@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
-          CreatedDate: '10-12-2022',
-          Action: '...',
-        },
-        {
-          No: 8,
-          Username: 'Greace',
-          Email: 'greace@gmail.com',
-          PhoneNumber: '081291273233',
-          TotalPoint: '10.000',
-          CreatedDate: '10-12-2022',
-          Action: '...',
         },
       ],
-      selectMode: 'multi',
-      selected: [],
+      form: {
+        No: '',
+        Username: '',
+        Email: '',
+        PhoneNumber: '',
+        TotalPoint: '',
+        CreatedDate: '',
+      },
     }
   },
   computed: {
     rows() {
       return this.items.length
     },
+    filteredRows() {
+      return this.rows.filter((row) => {
+        const Username = row.Username.toString().toLowerCase()
+        const No = row.department.toLowerCase()
+        const searchTerm = this.filter.toLowerCase()
+
+        return Username.includes(searchTerm) || No.includes(searchTerm)
+      })
+    },
   },
   methods: {
-    onRowSelected(items) {
-      this.selected = items
+    del(item, index, button) {
+      this.items.splice(index + (this.currentPage - 1) * this.perPage, 1)
     },
-    selectAllRows() {
-      this.$refs.selectableTable.selectAllRows()
+    onSubmit(event) {
+      event.preventDefault()
+      alert(JSON.stringify(this.form))
+      this.items.push({
+        No: this.form.No,
+        Username: this.form.Username,
+        Email: this.form.Email,
+        PhoneNumber: this.form.PhoneNumber,
+        TotalPoint: this.form.TotalPoint,
+        CreatedDate: this.form.CreatedDate,
+      })
     },
-    clearSelected() {
-      this.$refs.selectableTable.clearSelected()
+    highlightMatches(text) {
+      const matchExists = text.toLowerCase().includes(this.filter.toLowerCase())
+      if (!matchExists) return text
+
+      const re = new RegExp(this.filter, 'ig')
+      return text.replace(
+        re,
+        (matchedText) => `<strong>${matchedText}</strong>`
+      )
     },
   },
 }
 </script>
+
 <style>
-.modal-header {
+.primaryColor,
+.table thead th,
+thead,
+th {
+  background-color: #3252df !important;
   color: white;
-  background-color: #3252df;
 }
-.close {
-  color: white;
+.rounded-md {
+  border-radius: 10px;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.button-save {
+  background-color: #3252df;
+  width: 100px;
+  height: 40px;
+}
+
+.button-save:hover {
+  background-color: #163ef1;
+  border: 2px solid #3252df;
+}
+
+.button-close {
+  border: 2px solid #3252df;
+  background-color: #fff;
+  width: 100px;
+  height: 40px;
+  color: #163ef1;
+}
+
+.button-close:hover {
+  border: 2px solid #3252df;
+  background-color: #3252df;
+  color: #fff;
 }
 </style>
