@@ -20,6 +20,7 @@
                         style="background-color: #f4f6f8; border: none"
                         placeholder="Username"
                         class="form-control"
+                        v-model="frm.email"
                         id="email"
                       />
                       <i class="fas fa-user glyphicon"></i>
@@ -32,6 +33,7 @@
                         style="background-color: #f4f6f8; border: none"
                         placeholder="Password"
                         class="form-control"
+                        v-model="frm.password"
                         id="password"
                       />
                       <i class="fas fa-key glyphicon"></i>
@@ -39,20 +41,13 @@
                   </div>
 
                   <div class="form-group">
-                    <nuxt-link to="/">
-                      <button
-                        type="submit"
-                        class="
-                          btn btn-block
-                          text-white
-                          py-2
-                          rounded-md
-                          login-btn
-                        "
-                      >
-                        Masuk
-                      </button>
-                    </nuxt-link>
+                    <button
+                      @click.prevent="doLogin"
+                      type="submit"
+                      class="btn btn-block text-white py-2 rounded-md login-btn"
+                    >
+                      Masuk
+                    </button>
                   </div>
                   <!-- form-group// -->
                 </form>
@@ -66,7 +61,32 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      frm: {
+        email: 'adminpoint1@gmail.com',
+        password: '',
+      },
+    }
+  },
+  mounted() {},
+  methods: {
+    async doLogin() {
+      try {
+        let rs = await this.$axios.post('login/admin', this.frm)
+        console.log(rs)
+        let { data } = rs
+        localStorage.setItem('user', JSON.stringify(data))
+        localStorage.setItem('token', JSON.stringify(data.token))
+        this.$toast('Ok')
+        this.$router.push('/')
+      } catch (error) {
+        this.$toast.error('Password salah')
+      }
+    },
+  },
+}
 </script>
 
 <style>
